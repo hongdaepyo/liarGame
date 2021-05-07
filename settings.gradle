@@ -1,0 +1,4 @@
+rootProject.name = 'liarGame'
+
+include 'account-api'
+include 'game-api'
