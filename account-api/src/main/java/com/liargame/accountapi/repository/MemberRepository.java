@@ -16,4 +16,12 @@ public class MemberRepository {
         em.persist(member);
         return member.getId();
     }
+
+    public void delete(Member member) {
+        em.merge(member);
+    }
+
+    public Member find(Long memberId) {
+        return em.find(Member.class, memberId);
+    }
 }

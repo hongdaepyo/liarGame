@@ -30,6 +30,13 @@ public class Member {
 
     @Column(name = "insert_time", columnDefinition = "DATETIME")
     private LocalDateTime insertTime;
+
+    @Column(name = "delete_time", columnDefinition = "DATETIME")
+    private LocalDateTime deleteTime;
+
+    public void deleteMember() {
+        this.deleteTime = LocalDateTime.now();
+    }
 }
 
 
