@@ -30,4 +30,17 @@ public class MemberService {
 
         return member;
     }
+
+    @Transactional
+    public void deleteMember(Long memberId) {
+        Member member = findMember(memberId);
+        // todo. 회원정보가 없을 때 처리
+        member.deleteMember();
+
+        memberRepository.delete(member);
+    }
+
+    public Member findMember(Long memberId) {
+        return memberRepository.find(memberId);
+    }
 }

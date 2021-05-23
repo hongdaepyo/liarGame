@@ -36,4 +36,18 @@ class MemberServiceTest {
         when(memberRepository.save(member)).thenReturn(1L);
 
     }
+
+    @Test
+    @DisplayName("회원 조회")
+    void findMember() {
+        when(memberRepository.find(1L));
+    }
+
+    @Test
+    @DisplayName("회원 탈퇴")
+    void deleteMember() {
+        Member member = memberRepository.find(1L);
+        member.deleteMember();
+        memberRepository.delete(member);
+    }
 }
